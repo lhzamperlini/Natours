@@ -20,7 +20,7 @@ body{
     line-height: 1.7;
     color: #777;
     /* Padding feio */
-    padding: 30px;
+    /* padding: 30px; */
 }
 
 .header{
@@ -55,11 +55,14 @@ body{
     left: 50%;
     /* Move o elemento de acordo com o seu proprio tamanho */
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 60px;
 }
 
 .heading-primary-main{
@@ -67,6 +70,16 @@ body{
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+    animation: moveInLeft 1s ease-out;
+    /* A velocidade dela durante a execução */
+
+/*
+    Quanto tempo demora para acontecer     
+    animation-delay: 3s;
+
+    //Quantas vezes ela repete
+    animation-iteration-count: 3 
+ */
 }
 
 .heading-primary-sub{
@@ -74,4 +87,108 @@ body{
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 17.4px;
+    animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80%{
+        transform: translateX(50px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80%{
+        transform: translateX(-50px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Estilizando Ancora Inicial Utilizando Pseudo Elementos */
+.btn:link, 
+.btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+}
+
+.btn:hover{
+    /* hover que faz o botão subir */
+    transform: translateY(-3px);
+    /* X Y BLUR COLOR */
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn:active{
+    /* Faz o Botão descer no click */
+    transform: translateY(-1px);
+}
+
+.btn-white{
+    background-color: #fff;
+    color: #777;
+}
+
+/* Elemento tratado como filho do botão */
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after{
+    background-color: white;
+}
+
+.btn:hover::after{
+    /* deixa o botão filho gigante */
+    transform: scaleX(1.5) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated{
+    animation: moveInBottom .5s ease-out .75s;
+    /* Fazendo botão sumir antes de começar a animação */
+    animation-fill-mode: backwards;
 }
