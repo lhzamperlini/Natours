@@ -1,207 +1,150 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-
+@charset "UTF-8";
 *,
 *::after,
-*::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
 
-html{
-    /* Setando font size padrão para Facilitar os calculos do REM */
-    font-size: 10px;
-    /* 
+html {
+  /* Setando font size padrão para Facilitar os calculos do REM */
+  font-size: 10px;
+  /* 
         1rem 10px e por ai vai
-    */
-}
+    */ }
 
-body{
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 1.7;
-    color: #777;
-    box-sizing: border-box;
-    /* Padding feio */
-    /* padding: 3rem; */
-}
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #777;
+  box-sizing: border-box; }
 
-.header{
-    height: 95vh;
-    background-image:linear-gradient(
-        to right bottom,
-        rgba(126, 213, 111, 0.7),
-        rgba(40, 180, 131, 0.7)),
-        url(../img/hero.jpg);
-    background-size: cover;
-    /* Mantém a imagem no topo */
-    background-position: top;
-    /* Mantém a forma de poligono */
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    position: relative;
-}
-
-.logo-box{
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  /* Mantém a imagem no topo */
+  background-position: top;
+  /* Mantém a forma de poligono */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; }
+  .header__logo-box {
     position: absolute;
     top: 4rem;
-    left: 4rem;
-}
-
-.logo{
-    height: 3.5rem;
-}
-
-.text-box{
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
     position: absolute;
     /* Move o elemento de acordo com a tela */
     top: 40%;
     left: 50%;
     /* Move o elemento de acordo com o seu proprio tamanho */
     transform: translate(-50%, -50%);
-    text-align: center;
-}
+    text-align: center; }
 
-.heading-primary{
-    color: #fff;
-    text-transform: uppercase;
-    backface-visibility: hidden;
-    margin-bottom: 6rem;
-}
-
-.heading-primary-main{
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
     animation: moveInLeft 1s ease-out;
     /* A velocidade dela durante a execução */
-
-/*
-    Quanto tempo demora para acontecer     
-    animation-delay: 3s;
-
-    //Quantas vezes ela repete
-    animation-iteration-count: 3 
- */
-}
-
-.heading-primary-sub{
+    /*
+        Quanto tempo demora para acontecer     
+        animation-delay: 3s;
+    
+        //Quantas vezes ela repete
+        animation-iteration-count: 3 
+     */ }
+  .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
-}
+    animation: moveInRight 1s ease-out; }
 
-@keyframes moveInLeft{
-    0%{
-        opacity: 0;
-        transform: translateX(-10rem);
-    }
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(5rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
-    80%{
-        transform: translateX(5rem);
-    }
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-5rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes moveInRight{
-    0%{
-        opacity: 0;
-        transform: translateX(10rem);
-    }
-
-    80%{
-        transform: translateX(-5rem);
-    }
-
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes moveInBottom{
-    0%{
-        opacity: 0;
-        transform: translateY(3rem);
-    }
-
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
 /* Estilizando Ancora Inicial Utilizando Pseudo Elementos */
-.btn:link, 
-.btn:visited{
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .2s;
-    position: relative;
-    font-size: 1.5rem;
-}
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.5rem; }
 
-.btn:hover{
-    /* hover que faz o botão subir */
-    transform: translateY(-.3rem);
-    /* X Y BLUR COLOR */
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
-}
-
-.btn:active{
-    /* Faz o Botão descer no click */
-    transform: translateY(-1px);
-}
-
-.btn-white{
-    background-color: #fff;
-    color: #777;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
-}
-
-/* Elemento tratado como filho do botão */
-.btn::after{
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
-
-.btn-white::after{
-    background-color: white;
-}
-
-.btn:hover::after{
+.btn:hover {
+  /* hover que faz o botão subir */
+  transform: translateY(-0.3rem);
+  /* X Y BLUR COLOR */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
     /* deixa o botão filho gigante */
     transform: scaleX(1.5) scaleY(1.6);
-    opacity: 0;
-}
+    opacity: 0; }
 
-.btn-animated{
-    animation: moveInBottom .5s ease-out .75s;
-    /* Fazendo botão sumir antes de começar a animação */
-    animation-fill-mode: backwards;
-}
+.btn:active {
+  /* Faz o Botão descer no click */
+  transform: translateY(-1px); }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
+
+.btn--white {
+  background-color: #fff;
+  color: #777;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  /* Elemento tratado como filho do botão */ }
+  .btn--white::after {
+    background-color: white; }
+
+.btn--animated {
+  animation: moveInBottom .5s ease-out .75s;
+  /* Fazendo botão sumir antes de começar a animação */
+  animation-fill-mode: backwards; }
