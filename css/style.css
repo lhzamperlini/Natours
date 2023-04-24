@@ -8,68 +8,13 @@
 
 html {
   /* Setando font size padrão para Facilitar os calculos do REM */
-  font-size: 10px;
+  font-size: 62.5%;
   /* 
         1rem 10px e por ai vai
     */ }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 1.7;
-  color: #777;
   box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  /* Mantém a imagem no topo */
-  background-position: top;
-  /* Mantém a forma de poligono */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    /* Move o elemento de acordo com a tela */
-    top: 40%;
-    left: 50%;
-    /* Move o elemento de acordo com o seu proprio tamanho */
-    transform: translate(-50%, -50%);
-    text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation: moveInLeft 1s ease-out;
-    /* A velocidade dela durante a execução */
-    /*
-        Quanto tempo demora para acontecer     
-        animation-delay: 3s;
-    
-        //Quantas vezes ela repete
-        animation-iteration-count: 3 
-     */ }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
   0% {
@@ -98,6 +43,56 @@ body {
   100% {
     opacity: 1;
     transform: translateX(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /* Setando font size padrão para Facilitar os calculos do REM */
+  font-size: 62.5%;
+  /* 
+        1rem 10px e por ai vai
+    */ }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #777; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-out;
+    /* A velocidade dela durante a execução */
+    /*
+        Quanto tempo demora para acontecer     
+        animation-delay: 3s;
+    
+        //Quantas vezes ela repete
+        animation-iteration-count: 3 
+     */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
 
 /* Estilizando Ancora Inicial Utilizando Pseudo Elementos */
 .btn:link, .btn:visited {
@@ -148,3 +143,27 @@ body {
   animation: moveInBottom .5s ease-out .75s;
   /* Fazendo botão sumir antes de começar a animação */
   animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  /* Mantém a imagem no topo */
+  background-position: top;
+  /* Mantém a forma de poligono */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    /* Move o elemento de acordo com a tela */
+    top: 40%;
+    left: 50%;
+    /* Move o elemento de acordo com o seu proprio tamanho */
+    transform: translate(-50%, -50%);
+    text-align: center; }

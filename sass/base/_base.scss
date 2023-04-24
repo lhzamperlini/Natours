@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* Setando font size padrão para Facilitar os calculos do REM */
+    font-size: 62.5%;
+    /* 
+        1rem 10px e por ai vai
+    */
+}
+
+body {
+    box-sizing: border-box;
+}

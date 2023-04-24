@@ -1,0 +1,65 @@
+/* Estilizando Ancora Inicial Utilizando Pseudo Elementos */
+
+.btn {
+
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+        font-size: 1.5rem;
+    }
+
+    &:hover {
+        /* hover que faz o botão subir */
+        transform: translateY(-.3rem);
+        /* X Y BLUR COLOR */
+        box-shadow: 0 1rem 2rem rgba($black-color, .2);
+        &::after {
+            /* deixa o botão filho gigante */
+            transform: scaleX(1.5) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        /* Faz o Botão descer no click */
+        transform: translateY(-1px);
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &--white {
+        background-color: $white-color;
+        color: $gray-color;
+        box-shadow: 0 .5rem 1rem rgba($black-color, .2);
+        /* Elemento tratado como filho do botão */
+
+        &::after {
+            background-color: white;
+        }
+
+    }
+
+
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        /* Fazendo botão sumir antes de começar a animação */
+        animation-fill-mode: backwards;
+    }
+}
