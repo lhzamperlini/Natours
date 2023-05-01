@@ -55,6 +55,17 @@
 
     }
 
+    &--green {
+        background-color: $color-primary;
+        color: $white-color;
+        box-shadow: 0 .5rem 1rem rgba($black-color, .2);
+        /* Elemento tratado como filho do botão */
+
+        &::after {
+            background-color: $color-primary;
+        }
+
+    }
 
     &--animated {
         animation: moveInBottom .5s ease-out .75s;
