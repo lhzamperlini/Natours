@@ -1,6 +1,7 @@
 /* Estilizando Ancora Inicial Utilizando Pseudo Elementos */
 
 .btn {
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -11,6 +12,10 @@
         transition: all .2s;
         position: relative;
         font-size: $default-font-size;
+
+        //Changing Button Style
+        border: none;
+        cursor: pointer;
     }
 
     &:hover {
@@ -25,9 +30,12 @@
         }
     }
 
-    &:active {
+    &:active,
+    &:focus {
         /* Faz o Botão descer no click */
+        outline: none;
         transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($black-color, .2);
     }
 
     &::after {
